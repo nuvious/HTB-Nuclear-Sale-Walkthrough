@@ -1,0 +1,10 @@
+# Python venv's
+.venv
+venv
+
+# challenge.pcap
+challenge.pcap
+
+# Tcpflow stuff
+report.xml
+dumps
