@@ -5,11 +5,18 @@ import os
 import glob
 import re
 
-if not os.path.isfile('/target/challenge.pcap'):
-    print("To run this demo challenge.pcap must be mounted to /target")
+"""
+Let's use tcpflow to dump all the tcp sessions to a directory called /dump.
+This can be done in native python but the libraries that parse pcap files
+are compiled from c and that's a pain especially for Windows users getting
+their feet wet in linux. Easier to use a ready-to-go tool that's available
+in linux/mac/windows than try to juggle c-dependencies. Also makes the
+Dockerfile VERY short.
+"""
+if not os.path.isfile('challenge.pcap'):
+    print("To run this demo challenge.pcap must be available")
     exit(1)
-
-os.system('tcpflow -r -o dump /target/challenge.pcap')
+os.system('tcpflow -o dump -r challenge.pcap')
 
 """
 Looking at the TCP streams in wireshark we can see there are 3 messages passed

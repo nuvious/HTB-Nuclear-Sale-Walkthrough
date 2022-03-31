@@ -29,7 +29,7 @@ Alternatively you can execute the demo in docker as follows:
 
 ```bash
 docker build -t htb-nuclear-sale .
-docker run --rm -it -v /path/to/folder/with/pcap:/target htb-nuclear-sale
+docker run --rm -it -v /path/to/challenge.pcap:/app/challenge.pcap temp
 ...output of the solution.py...
 HTB{whatever_the_flag_is}
 ```
