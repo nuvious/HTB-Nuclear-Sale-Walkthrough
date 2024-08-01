@@ -12,6 +12,11 @@ are compiled from c and that's a pain especially for Windows users getting
 their feet wet in linux. Easier to use a ready-to-go tool that's available
 in linux/mac/windows than try to juggle c-dependencies. Also makes the
 Dockerfile VERY short.
+
+NOTE: Since writing this I've since been using scapy to parse pcap files
+and recommend it over the below. May modify this walkthrough in the future.
+
+https://scapy.readthedocs.io/en/latest/installation.html
 """
 if not os.path.isfile('challenge.pcap'):
     print("To run this demo challenge.pcap must be available")
